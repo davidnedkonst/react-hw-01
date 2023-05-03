@@ -1,14 +1,14 @@
-export const Profile = (
+export function Profile({ username, tag, location, avatar, stats }) {
     <div className="profile">
         <div className="description">
             <img
-                src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+                src={avatar}
                 alt="User avatar"
                 className="avatar"
             />
-            <p className="name">Petra Marica</p>
-            <p className="tag">@pmarica</p>
-            <p className="location">Salvador, Brasil</p>
+            <p className="name">{username}</p>
+            <p className="tag">{tag}</p>
+            <p className="location">{location}</p>
         </div>
 
         <ul className="stats">
@@ -26,5 +26,4 @@ export const Profile = (
             </li>
         </ul>
     </div>
-)
-;
+}

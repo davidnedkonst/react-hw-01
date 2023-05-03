@@ -1,6 +1,6 @@
-export const Statistics = (
+export function Statistics({ title, stats }) {
     <section className="statistics">
-        <h2 className="title">Upload stats</h2>
+        <h2 className="title">{title}</h2>
 
         <ul className="stat-list">
             <li className="item">
@@ -21,4 +21,4 @@ export const Statistics = (
             </li>
         </ul>
     </section>
-);
+}

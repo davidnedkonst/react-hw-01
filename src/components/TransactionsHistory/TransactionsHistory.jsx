@@ -1,4 +1,4 @@
-export const TransactionsHistory = (
+export function TransactionsHistory({ id, type, amount, currency }) {
     <table className="transaction-history">
         <thead>
             <tr>
@@ -21,4 +21,4 @@ export const TransactionsHistory = (
             </tr>
         </tbody>
     </table>
-);
+}

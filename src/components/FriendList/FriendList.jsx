@@ -1,4 +1,4 @@
-export const FriendList = (
+export function FriendList({ friends }) {
     <ul className="friend-list">
     </ul>
-);
+}
