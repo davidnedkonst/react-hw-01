@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 
-export function Statistics({ title, stats }) {
+export default function Statistics({ title, stats }) {
     return (
         <section className="statistics">
             {title &&
