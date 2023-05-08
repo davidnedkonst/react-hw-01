@@ -3,14 +3,14 @@ import css from './FriendistItem.module.css';
 
 export default function FriendListItem({ avatar, name, isOnline }) {
     return (
-        <li>
-            <span className="status">{isOnline}</span>
+        <li className={css.item}>
+            <span className={isOnline ? css.online : css.offline}></span>
             <img
-                className="avatar"
+                className={css.avatar}
                 src={avatar}
                 alt="User avatar"
-                width="48" />
-            <p className="name">{name}</p>
+                width="48px" />
+            <p className={css.name}>{name}</p>
         </li>
     );
 }
