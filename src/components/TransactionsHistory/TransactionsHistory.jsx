@@ -3,9 +3,9 @@ import css from './TransactionsHistory.module.css';
 
 export default function TransactionsHistory({ items }) {
     return (
-        <table className="transactions-history">
+        <table className={css['transactions-history']}>
             <thead>
-                <tr>
+                <tr className={css.thread}>
                     <th>Type</th>
                     <th>Amount</th>
                     <th>Currency</th>
@@ -14,9 +14,9 @@ export default function TransactionsHistory({ items }) {
 
             <tbody>
                 {
-                    items.map(({ id, type, amount, currency }) => {
+                    items.map(({ id, type, amount, currency }, index) => {
                         return (
-                            <tr key={id}>
+                            <tr key={id} className={index % 2 ? css.tr1 : css.tr2}>
                                 <td>{type}</td>
                                 <td>{amount}</td>
                                 <td>{currency}</td>
