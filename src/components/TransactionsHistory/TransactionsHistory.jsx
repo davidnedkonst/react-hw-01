@@ -1,41 +1,44 @@
 import PropTypes from 'prop-types';
-import css from './TransactionsHistory.module.css';
+import {
+  TransactHistory,
+  TableHeadRow,
+  TableRow,
+  TableTd,
+} from './TransactionsHistory.styled';
 
 export default function TransactionsHistory({ items }) {
-    return (
-        <table className={css['transactions-history']}>
-            <thead>
-                <tr className={css.thread}>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-            </thead>
+  return (
+    <TransactHistory>
+      <thead>
+        <TableHeadRow>
+          <TableTd>Type</TableTd>
+          <TableTd>Amount</TableTd>
+          <TableTd>Currency</TableTd>
+        </TableHeadRow>
+      </thead>
 
-            <tbody>
-                {
-                    items.map(({ id, type, amount, currency }, index) => {
-                        return (
-                            <tr key={id} className={index % 2 ? css.tr1 : css.tr2}>
-                                <td>{type}</td>
-                                <td>{amount}</td>
-                                <td>{currency}</td>
-                            </tr>
-                        );
-                    })
-                }
-            </tbody>
-        </table>
-    );
+      <tbody>
+        {items.map(({ id, type, amount, currency }, index) => {
+          return (
+            <TableRow key={id} index={index}>
+              <TableTd>{type}</TableTd>
+              <TableTd>{amount}</TableTd>
+              <TableTd>{currency}</TableTd>
+            </TableRow>
+          );
+        })}
+      </tbody>
+    </TransactHistory>
+  );
 }
 
 TransactionsHistory.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            type: PropTypes.string.isRequired,
-            amount: PropTypes.string.isRequired,
-            currency: PropTypes.string.isRequired
-        }).isRequired
-    ).isRequired
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
