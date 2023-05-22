@@ -4,7 +4,7 @@ export const Card = styled.div`
 margin: 0 auto 10% auto;
   max-width: 400px;
 
-  background-color: rgb(229, 236, 236);
+  background-color: ${({ theme }) => theme.colors.Profile};
   border: 3px solid gray;
 
   display: flex;

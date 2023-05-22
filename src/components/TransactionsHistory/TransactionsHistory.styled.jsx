@@ -9,7 +9,7 @@ export const TransactHistory = styled.table`
 `;
 
 export const TableHeadRow = styled.tr`
-  background-color: rgb(30, 191, 191);
+  background-color: ${({theme}) => theme.colors.tableHead};
   height: 50px;
   font-size: 20px;
   color: white;
@@ -18,7 +18,10 @@ export const TableHeadRow = styled.tr`
 export const TableRow = styled.tr`
   height: 30px;
   font-size: 16px;
-  background-color: ${props => (props.index % 2 === 0) ? 'rgb(232, 223, 224)' : 'rgb(167, 166, 166)'};
+  background-color: ${({ index, theme }) => {
+    return !(index % 2) ? theme.colors.TableRow1 : theme.colors.TableRow2;
+  }
+  };
 `;
 
 export const TableTd = styled.td`

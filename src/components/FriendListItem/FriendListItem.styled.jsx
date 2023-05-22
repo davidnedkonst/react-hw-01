@@ -5,7 +5,7 @@ export const FriendCard = styled.li`
     max-width: 200px;
     padding: 1%;
 
-    background-color: rgb(229, 236, 236);
+    background-color: ${({ theme }) => theme.colors.FriendCard};
     border: 3px solid gray;
     border-radius: 10px;
 
@@ -29,5 +29,5 @@ export const Led = styled.span`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${props => props.isOnline ? 'green' : 'red'};
+    background-color: ${({ isOnline, theme }) => isOnline ? theme.colors.isOnline : theme.colors.isOffline};
 `;

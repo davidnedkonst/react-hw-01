@@ -1,3 +1,6 @@
+import { ThemeProvider } from '@emotion/react';
+import {theme1} from '../constants/theme';
+
 import Profile from './Profile/Profile';
 import user from 'temp/user.json';
 
@@ -12,22 +15,26 @@ import transactions from 'temp/transactions.json';
 
 export const App = () => {
   return (
-    <div>
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
 
-      <Statistics title="Statistics" stats={data} />
+    <ThemeProvider theme={theme1}>
+      <div>
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
 
-      <Statistics stats={data} />
+        <Statistics title="Statistics" stats={data} />
 
-      <FriendList friends={friends} />
+        <Statistics stats={data} />
 
-      <TransactionsHistory items={transactions}/>
-    </div>
+        <FriendList friends={friends} />
+
+        <TransactionsHistory items={transactions} />
+      </div>
+    </ThemeProvider>
+
   );
 };
