@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
-import {theme1} from '../constants/theme';
+import { theme1 } from '../constants/theme';
 
 import Profile from './Profile/Profile';
 import user from 'temp/user.json';

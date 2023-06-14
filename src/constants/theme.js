@@ -7,5 +7,8 @@ export const theme1 = Object.freeze({
         FriendCard: 'rgb(200, 230, 236)',
         isOffline: 'red',
         isOnline: 'green',
-    }
+    },
+
+    spacing: (value) => `${4 * value}px`,
+    border: (value) => `${2 * value}px`,
 })

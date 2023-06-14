@@ -1,11 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
-margin: 0 auto 10% auto;
-  max-width: 400px;
+  margin: 
+  0
+  auto
+  ${({ theme }) => theme.spacing(10)} 
+  auto;
+
+  max-width: ${({ theme }) => theme.spacing(100)};
 
   background-color: ${({ theme }) => theme.colors.Profile};
-  border: 3px solid gray;
+  border: ${({ theme }) => theme.border(1)} solid gray;
 
   display: flex;
   flex-direction: column;
@@ -14,12 +19,12 @@ margin: 0 auto 10% auto;
 `;
 
 export const Description = styled.div`
-  padding: 5%;
+  padding: ${({ theme }) => theme.spacing(5)};
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const Avatar = styled.img`
@@ -66,7 +71,8 @@ export const StatsItem = styled.li`
   width: auto;
 
   background-color: rgb(191, 195, 195);
-  border: 1px solid gray;
+  border-top: ${({ theme }) => theme.border(1)} solid gray;
+  border-right: ${({ theme }) => theme.border(1)} solid gray;
 
   display: flex;
   flex-direction: column;
